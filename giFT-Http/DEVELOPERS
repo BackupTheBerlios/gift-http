@@ -1,0 +1,39 @@
+$id $
+
+This file is intented for front end developers wishing to make use of
+giFT-Http.
+
+To download a file you have to create an ADDSOURCE command for giFT.
+Since the plugin doesn't support searching you cannot retrieve the
+data for this command from a search result.
+
+An ADDSOURCE command looks like this:
+
+ADDSOURCE
+  user (username)
+  hash (hash)
+  size (filesize)
+  url (url)
+  save (savefilename)
+;
+
+All fields except hash are required for giFT to function properly.
+
+This creates a problem because usually one just has an URL for a
+http download.
+
+The username can be set to anything you like so it's not a problem.
+
+However you will have to know the size of the file you're going to
+download in advance. This is a limitation in giFT and there is
+currently no way around it.
+
+The hash can be left out if you don't want to verify the file after
+downloading. Otherwise you can specify an MD5 of the entire file to
+verify against.
+
+Please note that the scheme part of the url must exactly match the
+plugin name (i.e. "Http", case sensitive). Thus you must modify all
+http urls to start with "Http://".
+
+
